@@ -3,19 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entrega 1 - Simulador</title>
+    <title>Análisis de Noticias Online</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
-    <h1>Hola</h1>
-    <h2>Bienvenidos al comparador de Noticias</h2>
-    <p>
-      <b>Objetivo: </b>Mostrar las diferencias en el abordaje de cada noticia
-      (al menos 2, ingresadas por el usuario)
-    </p>
-    <p>
-      Se complementará con librerías de NPL y gráficos (se hará el intento...)
-    </p>
+    <header class="w-full bg-gray-300 text-center p-3 text-black">
+      <h1 class="text-3xl">Bienvenido al sitio de<br>análisis de noticias comparadas</h1>
+      <h2 class="py-4">Un sitio para indagar críticamente en los discursos de la prensa digital</h2>
+    </header>
 
-    <script src="simulador.js"></script>
+    <main class="container mx-auto p-4 mt-4">
+      
+      <section id="peticion_nombre" class="text-center mb-4">
+        <form action="" class="bg-white p-4 rounded shadow-md">
+          <label for="nombre" class="block text-gray-600 p-4"><h4>Para empezar y hacer esta experiencia más personalizada, ¿cuál es tu nombre o alias?</h4></label>
+          <input type="text" id="nombre" name="nombre" class="w-auto border border-gray-300 p-2 rounded" placeholder="Holaste">
+          <input type="button" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600" value="Ok">
+        </form>
+      </section>
+
+      <section id="instrucciones" class="m-5 p-5 bg-green-200">
+        <h4 class="text-lg">INSTRUCCIONES</h4>
+        <h5 class="p-4">Estimado/a {nombre_ingresado} o {visitante}, sigue estas instrucciones:</h5>
+        <ul class="list-disc pl-4 pr-4">
+          <li>Copie y pegue el texto de una noticia. Tiene esta opción para conseguir un texto plano del sitio analizado: <a href="https://www.textise.net/" target="_blank"><strong>Textise</strong></a>.</li>
+          <li>Puede ingresar hasta dos noticias a comparar. Procure que sea del mismo tema. </li>
+          <li>Para probar el sistema, puede basarse en estos ejemplos</li>
+        </ul>
+      </section>
+
+
+      <section id="comparador_noticias">
+
+        <article id="tematica_noticias" class="text-center mb-4" >
+
+          <form action="" id="tematicas_id" class="bg-white p-4 rounded shadow-md">
+            <label for="tematica" class="block"><h4 class="text-lg p-4">¿De qué temática son las noticias a comparar?</h4></label>
+            <select id="tematica" name="tematica" class="mx-auto block appearance-none w-6/12 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-center">
+              <option value="politica">Política</option>
+              <option value="internacional">Internacional</option>
+              <option value="economia">Economía</option>
+              <option value="ciencia">Ciencia</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="cultura">Cultura</option>
+              <option value="medioambiente">Medioambiente</option>
+              <option value="entretenimiento">Entretenimiento</option>
+              <option value="otra">Otra</option>
+            </select>
+
+          </form>        
+
+
+        </article>
+
+        <div class="inline-flex">
+        <article id="noticia_1" class="w-6/12">
+
+          <h2 class="text-center text-2xl p-10 m-8 bg-orange-300 rounded">Ingrese noticia 1</h2>
+
+          <form action="" class="bg-white p-4 rounded shadow-md">
+
+            <div class="mb-4">
+              <label for="medio_comunicacion">¿De qué medio de comunicación (fuente) es esta noticia? </label>
+              <input type="text" name="medio_comunicacion" id="medio_comunicacion_1" class="w-full border border-gray-300 p-2 rounded"/>
+            </div>
+
+            <div class="mb-4">
+              <label for="fecha_publicacion">¿En qué fecha se publicó esta noticia? </label>
+              <input type="date" name="fecha_publicacion" id="fecha_publicacion_1" class="w-auto border border-gray-300 p-2 rounded"/>
+            </div>
+
+            <div class="mb-4">
+              <label for="titulo_noticia">Pegue el título de la noticia: </label>
+              <input type="text" name="titulo_noticia" id="titulo_noticia_1" class="w-full border border-gray-300 p-2 rounded" />
+            </div>
+
+            <div class="mb-4">
+              <label for="cuerpo_noticia">Pegue el cuerpo de la noticia: </label>
+              <textarea name="cuerpo_noticia" id="cuerpo_noticia_1" class="w-full border border-gray-300 p-2 rounded" rows="4"></textarea>
+            </div>
+
+            <input type="submit" id="enviar_1" value="Analizar noticia 1!" class="bg-blue-800 text-white p-4 w-full hover:bg-blue-500 rounded">
+          </form>
+
+        </article>
+
+
+        <article id="noticia_2" class="w-6/12">
+
+          <h2 class="text-center text-2xl p-10 m-8 bg-orange-300 rounded">Ingrese noticia 2</h2>
+
+          <form action="" class="bg-white p-4 rounded shadow-md">
+
+            <div class="mb-4">
+              <label for="medio_comunicacion">¿De qué medio de comunicación (fuente) es esta noticia? </label>
+              <input type="text" name="medio_comunicacion" id="medio_comunicacion_2" class="w-full border border-gray-300 p-2 rounded"/>
+            </div>
+
+            <div class="mb-4">
+              <label for="fecha_publicacion">¿En qué fecha se publicó esta noticia? </label>
+              <input type="date" name="fecha_publicacion" id="fecha_publicacion_1" class="w-auto border border-gray-300 p-2 rounded"/>
+            </div>
+
+            <div class="mb-4">
+              <label for="titulo_noticia">Pegue el título de la noticia: </label>
+              <input type="text" name="titulo_noticia" id="titulo_noticia_2" class="w-full border border-gray-300 p-2 rounded" />
+            </div>
+
+            <div class="mb-4">
+              <label for="cuerpo_noticia">Pegue el cuerpo de la noticia: </label>
+              <textarea name="cuerpo_noticia" id="cuerpo_noticia_2" class="w-full border border-gray-300 p-2 rounded" rows="4"></textarea>
+            </div>
+
+            <input type="submit" id="enviar_2" value="Analizar noticia 2!" class="bg-blue-800 text-white p-4 w-full hover:bg-blue-500 rounded">
+          </form>
+
+        </article>
+      </div>
+
+      </section>
+    </main>
+
+
+    <footer class="bg-gray-300 text-center p-4">
+      <h3 class="text-center">Proyecto realizado por Felipe Leal Arancibia en el curso de JavaScript, CoderHouse, 2023</h3>
+    </footer>
+
+    <!-- SE AÑADEN LOS VÍNCULOS A ARCHIVOS JS-->
+    <script src="./assets/js/funciones.js"></script>
+    <script src="./assets/js/objetos_ejemplos.js"></script>
+    <script src="./assets/js/objetos_nuevos.js"></script>
   </body>
 </html>
